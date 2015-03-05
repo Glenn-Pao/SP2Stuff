@@ -1176,8 +1176,7 @@ void SceneAssignment::Init()
 	loop2 = musicStop = musicStop2 = false;
 	entrance = exit1 = false;
 	timerez = 0;
-	//debug
-	debug = false;
+	
 
 	render1 = render2 = render3 = render4 = render5 = render6 = render7 = render8 = true; 
 
@@ -1801,12 +1800,7 @@ void SceneAssignment::Update(double dt)
 		UpdateLift(dt);
 		UpdateTravel(dt);
 
-		if(Application::IsKeyPressed('Q')) {
-			debug = true;
-		}
-		if(Application::IsKeyPressed('E')) {
-			debug = false;
-		}
+		
 		/*-------------------------------------------------!! UPDATE NEEDED (WEI HENG) !!----------------------------------------------------*/
 
 	if(transarrowY <0)
@@ -2091,7 +2085,7 @@ void SceneAssignment::Update(double dt)
 	{
 		place5 = true;
 	}
-	if(timer >=10 && timer < 10.1)
+	if(timer >=100 && timer < 100.1)
 	{
 		gameover = false;
 
@@ -2105,7 +2099,7 @@ void SceneAssignment::Update(double dt)
 		} 
 	}
 	
-	if(timer>13)
+	if(timer>103)
 	{
 		gameover = true;
 	}
@@ -2282,7 +2276,7 @@ void SceneAssignment::Update(double dt)
 	}
 
 	//static ai 3 work
-	if ((playerCamera.position.x<= 280 && playerCamera.position.x>= 230) && (playerCamera.position.z<= 150 && playerCamera.position.z>= 90 ) && (playerCamera.position.y >= 29 && playerCamera.position.y < 178) && renderai3text_2==false)
+	if ((playerCamera.position.x<= 280 && playerCamera.position.x>= 230) && (playerCamera.position.z<= 150 && playerCamera.position.z>= 90 ) && (playerCamera.position.y >= 25 && playerCamera.position.y < 178) && renderai3text_2==false)
 	{
 		renderai3text = true;
 	}
@@ -5201,20 +5195,7 @@ void SceneAssignment::Render()
 	RenderChar();
 	RenderStaticAIGlenn();
 	// FOR VISUAL DEBUGGING, IGNORE THE DOORMAN
-	if (debug == true)
-	{
-		for (int i = 0; i < ObjectList.size(); ++i)
-		{
-			for (int j = 0; j < ObjectList[i].collisionPos.size(); ++j)
-			{
-				modelStack.PushMatrix();
-				modelStack.Translate(ObjectList[i].collisionPos[j].x,ObjectList[i].collisionPos[j].y,ObjectList[i].collisionPos[j].z);
-				modelStack.Scale(2, 2, 2);
-				RenderMesh(meshList[GEO_DOORMAN], false);
-				modelStack.PopMatrix();
-			}
-		}
-	}
+	
 
 	if (render1 == true) {
 		modelStack.PushMatrix();
@@ -5303,7 +5284,7 @@ void SceneAssignment::Render()
 		RenderQuadOnScreen(meshList[GEO_UI], 80, 100, 0.5, 0.7);
 		modelStack.PopMatrix();
 		RenderTextOnScreen(meshList[GEO_TEXT], "Instructions." , Color(0, 0.7, 1), 4, 7, 11);
-		RenderTextOnScreen(meshList[GEO_TEXT], "1)find the green kid and press [F] catch it" , Color(0, 0.7, 1), 3.5, 1.1, 10.2);
+		RenderTextOnScreen(meshList[GEO_TEXT], "1)find the pink kid and press [F] catch it" , Color(0, 0.7, 1), 3.5, 1.1, 10.2);
 		RenderTextOnScreen(meshList[GEO_TEXT], "press [E] to start game" , Color(0, 0.7, 1), 3.5, 6, 8.2);
 
 	}
@@ -5526,7 +5507,7 @@ void SceneAssignment::Render()
 	{
 		ss6 << "Time:" << timer;
 	}
-	if(startgame ==false)
+	if(startgame ==false|| gameover ==false ||congrat == false)
 	{
 		modelStack.PushMatrix();
 		RenderQuadOnScreen(meshList[GEO_UI], 21, 30, 1.8, 2.3);
@@ -5667,7 +5648,7 @@ void SceneAssignment::Render()
 				Sleep(150);	
 			}
 
-		if (Application::IsKeyPressed(VK_RETURN)) {
+		if (Application::IsKeyPressed(VK_SPACE)) {
 			if (iChoice == 1) {
 				engine->stopAllSounds();
 				engine2->stopAllSounds();
