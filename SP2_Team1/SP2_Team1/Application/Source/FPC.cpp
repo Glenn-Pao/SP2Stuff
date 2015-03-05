@@ -131,12 +131,8 @@ void FPC::Update(double dt, vector<CObjects> list)
 	float moveSpeed;
 	float rotSpeed;
 
-	if(Application::IsKeyPressed(VK_SHIFT))
-	{
-		moveSpeed = defaultMoveSpeed * SPRINT_MODIFIER;
-		rotSpeed = defaultRotSpeed * SPRINT_MODIFIER;
-	}
-	else if(Application::IsKeyPressed(VK_CONTROL))
+
+	if(Application::IsKeyPressed(VK_CONTROL))
 	{
 		moveSpeed = defaultMoveSpeed * WALK_MODIFIER;
 		rotSpeed = defaultRotSpeed * WALK_MODIFIER;

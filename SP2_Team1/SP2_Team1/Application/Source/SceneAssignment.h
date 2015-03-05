@@ -380,9 +380,6 @@ private:
 	int FPS;
 	float ET,timer, aitimer1, aitimer2, aitimer3;
 
-	//debug
-	bool debug;
-
 	bool render1, render2, render3, render4, render5, render6, render7, render8,renderscenerio3,renderscenerio3text,startgame,game3,gameover1;	
 	bool place1,place2,place3,place4,place5,gameover,congrat,caught;
 	bool ai1, ai2, ai3;
