@@ -342,7 +342,7 @@ private:
 	//music
 	bool musicAlarm, loop1, loop2,musicStop, musicStop2, musicBGM, musicCrowd, Mission,Mission2 , coin, lightson,lightsoff;
 	bool startfire, endfire;
-	bool entrance, exit;
+	bool entrance, exit1;
 	int timerez;
 	
 	//entrance
