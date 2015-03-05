@@ -1174,7 +1174,7 @@ void SceneAssignment::Init()
 	lightson = lightsoff = false;
 	loop1 = startfire = endfire = false;
 	loop2 = musicStop = musicStop2 = false;
-	entrance = exit = false;
+	entrance = exit1 = false;
 	timerez = 0;
 	//debug
 	debug = false;
@@ -1556,9 +1556,9 @@ void SceneAssignment::UpdateDoor(double dt)
 	{
 		open = true;
 
-		if (exit == false) {
+		if (exit1 == false) {
 			engine5->play2D("../irrKlang/media/bye.wav",false);
-			exit = true;
+			exit1 = true;
 			entrance = false;
 		}
 	}
@@ -1630,7 +1630,7 @@ void SceneAssignment::UpdateDoor(double dt)
 		if (entrance == false) {
 			engine5->play2D("../irrKlang/media/welcome.wav",false);
 			entrance = true;
-			exit = false;
+			exit1 = false;
 		}
 	}
 
@@ -2262,7 +2262,7 @@ void SceneAssignment::Update(double dt)
 	}
 	if (renderai2text == true && Application::IsKeyPressed('F'))
 	{
-		renderai2text_2 = true;f
+		renderai2text_2 = true;
 		start2 = true;
 		engine5->play2D("../irrKlang/media/red.wav",false); 
 		Sleep(100);
