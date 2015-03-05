@@ -1,0 +1,35 @@
+digraph "SceneAssignment::RenderModelOrange"
+{
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="SceneAssignment::RenderModel\lOrange",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="AImoveX",height=0.2,width=0.4,color="black",URL="$MoveAI_8cpp.html#ae3cdca0057f4ffa06f1fff85fadfa85d",tooltip="NPC movement across X-axis. "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="MS::Translate",height=0.2,width=0.4,color="black",URL="$classMS.html#a7e94a35ce566fe3ec49c92b6c4bb663a",tooltip="Multiply the top matrix with a translation matrix based on the following parameters. "];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Mtx44::SetToTranslation",height=0.2,width=0.4,color="black",URL="$classMtx44.html#a0cc88cc5c648da14effba480c4d2ac70",tooltip="Set this matrix to a translation matrix with translation of (x, y, z) "];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Mtx44::SetToIdentity",height=0.2,width=0.4,color="black",URL="$classMtx44.html#a3ac8a0afd66412e15e4246474b893da2",tooltip="Set the matrix to an identity matrix (1&#39;s along the diagonal) "];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Mtx44::SetToZero",height=0.2,width=0.4,color="black",URL="$classMtx44.html#a3aea63c08759ac98b8a4f23fdc0d6a28",tooltip="Set this matrix to zero. "];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="AImoveY",height=0.2,width=0.4,color="black",URL="$MoveAI_8cpp.html#a2348c351c813109a02dc0102203374e1",tooltip="NPC movement across Y-axis. "];
+  Node7 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="AImoveZ",height=0.2,width=0.4,color="black",URL="$MoveAI_8cpp.html#a8917f81a663f7439d5a7fe1ff3c4cd1a",tooltip="NPC movement across Z-axis. "];
+  Node8 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="AIrotate",height=0.2,width=0.4,color="black",URL="$MoveAI_8cpp.html#ae9cc8e6c95819f2b467d50b00048b7fe",tooltip="Rotate NPC. "];
+  Node9 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="MS::Rotate",height=0.2,width=0.4,color="black",URL="$classMS.html#a6ce592114042b920b648bca5519690cd",tooltip="Multiply the top matrix with a rotation matrix based on the following parameters. ..."];
+  Node10 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="Mtx44::SetToRotation",height=0.2,width=0.4,color="black",URL="$classMtx44.html#ac0587ffb5ff9fd58ad5768d28fc06574",tooltip="Set Matrix to a rotation matrix about arbitrary axis. "];
+  Node11 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="Math::FAbs",height=0.2,width=0.4,color="black",URL="$namespaceMath.html#ac91173ab2efdf7313fe7aaeb6cb44cf6"];
+  Node9 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="AIstop",height=0.2,width=0.4,color="black",URL="$MoveAI_8cpp.html#a9c913b27056964315c8a422c2b4f96c7",tooltip="Stop NPC from moving. "];
+}

@@ -1,0 +1,15 @@
+digraph "Application" {
+  bgcolor=transparent;
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_eb1463819d84903762eb6f59cc0c4383 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_eb1463819d84903762eb6f59cc0c4383.html"];
+    dir_eb1463819d84903762eb6f59cc0c4383 [shape=plaintext label="Application"];
+    dir_5368a7eac203e4ae2b25fa7d9fd1a9ae [shape=box label="Source" color="black" fillcolor="white" style="filled" URL="dir_5368a7eac203e4ae2b25fa7d9fd1a9ae.html"];
+  }
+  dir_4ab6b4cc6a7edbff49100e9123df213f [shape=box label="Common" color="red" URL="dir_4ab6b4cc6a7edbff49100e9123df213f.html"];
+  dir_73f5790281594f034a2fc0d1f881cd30 [shape=box label="irrKlang" color="red" URL="dir_73f5790281594f034a2fc0d1f881cd30.html"];
+  dir_5368a7eac203e4ae2b25fa7d9fd1a9ae->dir_4ab6b4cc6a7edbff49100e9123df213f [headlabel="16", labeldistance=1.5 headhref="dir_000001_000002.html"];
+  dir_5368a7eac203e4ae2b25fa7d9fd1a9ae->dir_73f5790281594f034a2fc0d1f881cd30 [headlabel="1", labeldistance=1.5 headhref="dir_000001_000004.html"];
+}
